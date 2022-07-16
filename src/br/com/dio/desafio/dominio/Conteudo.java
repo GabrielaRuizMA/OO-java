@@ -1,7 +1,9 @@
 package br.com.dio.desafio.dominio;
 
-public abstract class Conteudo {
+// essa classe é abstrata para que não se possa instanciar o Conteudo
 
+public abstract class Conteudo {
+    //aqui ele é protected, então apenas os filhos podem ter acesso a esse atributo (Curso e Mentoria são os filhos)
     protected static final double XP_PADRAO = 10d;
 
     private String titulo;

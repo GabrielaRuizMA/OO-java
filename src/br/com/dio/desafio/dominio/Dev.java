@@ -6,12 +6,14 @@ public class Dev {
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
+/*  nesse caso, os conteudos incritos e concluidos estão salvos em uma lista a medida que o usuário se inscreve (em ordem), não está em array, pois teoricamente o dev só adicionará 1 vez cada curso, não se increverá em cursos já concluidos ou já realizados */
+
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
         bootcamp.getDevsInscritos().add(this);
     }
-
+//o opcional foi utilizado para resolver retornos nulls
     public void progredir() {
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if(conteudo.isPresent()) {

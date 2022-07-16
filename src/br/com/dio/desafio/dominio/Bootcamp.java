@@ -55,6 +55,7 @@ public class Bootcamp {
         this.conteudos = conteudos;
     }
 
+    //essas funções são utilizadas para comparar (sobrescrevendo) os objetos para identificar se são iguais
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,7 +63,7 @@ public class Bootcamp {
         Bootcamp bootcamp = (Bootcamp) o;
         return Objects.equals(nome, bootcamp.nome) && Objects.equals(descricao, bootcamp.descricao) && Objects.equals(dataInicial, bootcamp.dataInicial) && Objects.equals(dataFinal, bootcamp.dataFinal) && Objects.equals(devsInscritos, bootcamp.devsInscritos) && Objects.equals(conteudos, bootcamp.conteudos);
     }
-
+    /* o hashcode produz um Integer para guardar um objeto em estrutuas de dados. Se usarmos a hash para mais de dois clientes, ela gera dois hashcodes diferentes. Isso poderia resultar no armazenamento do mesmo objeto idêntico em dois lugares diferentes. Para evitar esse tipo de problema, devemos substituir o método hashCode também com base nos seguintes princípios. */
     @Override
     public int hashCode() {
         return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
